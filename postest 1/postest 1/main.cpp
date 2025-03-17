@@ -2,31 +2,32 @@
 #include <cmath>
 using namespace std;
 
-// Fungsi untuk login
+// Fungsi login
 bool login() {
     string username, password;
     do {
         cout << "🔐 masukan 🔐\n";
         cout << "👮🏻‍♀️Username: ";
-        cin >> username;
-        cout << "🗝️ Password: ";
-        cin >> password;
+        getline(cin, username);
         
-        if (username == "kelvin" && password == "2409106094") {
+        cout << "🗝️ Password: ";
+        getline(cin, password); // Memastikan password dibaca dengan getline
+
+        if (username == "kelvin alviansyah" && password == "2409106094") {
+            cout << "✅ Login berhasil!\n";
             return true;
         } else {
-            cout << "Login gagal! Silakan coba lagi.\n";
+            cout << "❌ Login gagal! Silakan coba lagi.\n";
         }
     } while (true);
 }
-
-// Fungsi untuk menghitung luas
-void hitungLuas() {
+// Fungsi menghitung luas
+double hitungLuas() {
     int pilihan;
     double sisi, panjang, lebar, jariJari, alas, tinggi;
 
     do {
-        cout << "\n== HITUNG LUAS ==\n";
+        cout << "\n-- HITUNG LUAS --\n";
         cout << "1. Persegi\n";
         cout << "2. Persegi Panjang\n";
         cout << "3. Lingkaran\n";
@@ -39,34 +40,31 @@ void hitungLuas() {
             case 1:
                 cout << "Masukkan sisi: ";
                 cin >> sisi;
-                cout << "Luas Persegi: " << sisi * sisi << endl;
-                break;
+                return sisi * sisi;
             case 2:
                 cout << "Masukkan panjang dan lebar: ";
                 cin >> panjang >> lebar;
-                cout << "Luas Persegi Panjang: " << panjang * lebar << endl;
-                break;
+                return panjang * lebar;
             case 3:
                 cout << "Masukkan jari-jari: ";
                 cin >> jariJari;
-                cout << "Luas Lingkaran: " << 3.14 * jariJari * jariJari << endl;
-                break;
+                return 3.14 * jariJari * jariJari;
             case 4:
                 cout << "Masukkan alas dan tinggi: ";
                 cin >> alas >> tinggi;
-                cout << "Luas Segitiga: " << 0.5 * alas * tinggi << endl;
-                break;
+                return 0.5 * alas * tinggi;
         }
     } while (pilihan != 5);
+    return 0; // Kembali 0 jika tidak ada pilihan yang valid
 }
 
-// Fungsi untuk menghitung keliling
-void hitungKeliling() {
+// Fungsi menghitung keliling
+double hitungKeliling() {
     int pilihan;
     double sisi, panjang, lebar, jariJari, sisi1, sisi2, sisi3;
 
     do {
-        cout << "\n== HITUNG KELILING ==\n";
+        cout << "\n-- HITUNG KELILING --\n";
         cout << "1. Persegi\n";
         cout << "2. Persegi Panjang\n";
         cout << "3. Lingkaran\n";
@@ -79,34 +77,31 @@ void hitungKeliling() {
             case 1:
                 cout << "Masukkan sisi: ";
                 cin >> sisi;
-                cout << "Keliling Persegi: " << 4 * sisi << endl;
-                break;
+                return 4 * sisi;
             case 2:
                 cout << "Masukkan panjang dan lebar: ";
                 cin >> panjang >> lebar;
-                cout << "Keliling Persegi Panjang: " << 2 * (panjang + lebar) << endl;
-                break;
+                return 2 * (panjang + lebar);
             case 3:
                 cout << "Masukkan jari-jari: ";
                 cin >> jariJari;
-                cout << "Keliling Lingkaran: " << 2 * 3.14 * jariJari << endl;
-                break;
+                return 2 * 3.14 * jariJari;
             case 4:
                 cout << "Masukkan tiga sisi segitiga: ";
                 cin >> sisi1 >> sisi2 >> sisi3;
-                cout << "Keliling Segitiga: " << sisi1 + sisi2 + sisi3 << endl;
-                break;
+                return sisi1 + sisi2 + sisi3;
         }
     } while (pilihan != 5);
+    return 0; // Kembali 0 jika tidak ada pilihan yang valid
 }
 
-// Fungsi untuk menghitung volume
-void hitungVolume() {
+// Fungsi menghitung volume
+double hitungVolume() {
     int pilihan;
     double sisi, panjang, lebar, tinggi, jariJari;
 
     do {
-        cout << "\n== HITUNG VOLUME ==\n";
+        cout << "\n-- HITUNG VOLUME --\n";
         cout << "1. Kubus\n";
         cout << "2. Balok\n";
         cout << "3. Bola\n";
@@ -119,25 +114,22 @@ void hitungVolume() {
             case 1:
                 cout << "Masukkan sisi: ";
                 cin >> sisi;
-                cout << "Volume Kubus: " << sisi * sisi * sisi << endl;
-                break;
+                return sisi * sisi * sisi;
             case 2:
                 cout << "Masukkan panjang, lebar, dan tinggi: ";
                 cin >> panjang >> lebar >> tinggi;
-                cout << "Volume Balok: " << panjang * lebar * tinggi << endl;
-                break;
+                return panjang * lebar * tinggi;
             case 3:
                 cout << "Masukkan jari-jari: ";
                 cin >> jariJari;
-                cout << "Volume Bola: " << (4.0 / 3.0) * 3.14 * jariJari * jariJari * jariJari << endl;
-                break;
+                return (4.0 / 3.0) * 3.14 * jariJari * jariJari * jariJari;
             case 4:
                 cout << "Masukkan jari-jari dan tinggi: ";
                 cin >> jariJari >> tinggi;
-                cout << "Volume Kerucut: " << (1.0 / 3.0) * 3.14 * jariJari * jariJari * tinggi << endl;
-                break;
+                return (1.0 / 3.0) * 3.14 * jariJari * jariJari * tinggi;
         }
     } while (pilihan != 5);
+    return 0; // Kembali 0 jika tidak ada pilihan yang valid
 }
 
 // Fungsi utama program
@@ -158,15 +150,21 @@ int main() {
         cin >> pilihan;
 
         switch (pilihan) {
-            case 1:
-                hitungLuas();
+            case 1: {
+                double luas = hitungLuas();
+                cout << "Hasil Luas: " << luas << endl;
                 break;
-            case 2:
-                hitungKeliling();
+            }
+            case 2: {
+                double keliling = hitungKeliling();
+                cout << "Hasil Keliling: " << keliling << endl;
                 break;
-            case 3:
-                hitungVolume();
+            }
+            case 3: {
+                double volume = hitungVolume();
+                cout << "Hasil Volume: " << volume << endl;
                 break;
+            }
             case 4:
                 cout << "Logout berhasil.\n";
                 break;
